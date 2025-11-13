@@ -379,7 +379,7 @@ section {
 }
 
 /*seção de contactos*/
-.contatos {
+#contatos {
     background-color: var(--cor-fundo-secundario);
 }
 
@@ -483,11 +483,13 @@ section {
 footer {
     padding: 2em 4em;
     background-color: var(--cor-fundo);
+    font-size: .9em;
 }
 
 .container-informacoes {
     color: #fff;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
@@ -501,12 +503,31 @@ footer {
     color: #797979;
 }
 
+div.redes-sociais {
+    display: flex;
+    justify-content: flex-start;
+    gap: 9px;
+
+}
+
+.container-informacoes div.contatos {
+    width: 30%;
+}
+
+.redes-sociais a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: gray;
+
+}
+
 .container-informacoes>div a:hover {
     color: var(--cor-principal);
 }
 
 .container-informacoes>div {
-    flex: 1 1 19%;
+    flex: 1 1 15%;
     display: flex;
     flex-direction: column;
     gap: .5em;
@@ -553,7 +574,7 @@ div.receba-notificacoes button {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    border-top: 1px solid #807e7e;
+    border-top: .5px solid #807e7e17;
     padding: 3em 0;
 }
 
@@ -564,4 +585,15 @@ div.receba-notificacoes button {
 
 .direitos-autorais a {
     color: var(--cor-principal);
+}
+.voltar-inicio{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--cor-principal);
+    color: var(--cor-fundo);
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+    z-index: 100;
 }
