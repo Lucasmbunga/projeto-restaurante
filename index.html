@@ -23,14 +23,14 @@
                     <a href="#">EN</a>
                 </div>
             </div>
-            <div>
+            <div class="menu-fixo">
                 <div class="logo">
                     <h1>Transgilas</h1>
                 </div>
                 <div class="menu">
                     <nav class="navmenu">
                         <ul>
-                            <li><a href="#">Home</a></li>
+                            <li><a href="#" class="ativo">Home</a></li>
                             <li><a href="#sobre">Sobre</a></li>
                             <li><a href="#nossoMenu">Menu</a></li>
                             <li><a href="#especiais">Especiais</a></li>
@@ -48,10 +48,25 @@
             <h1>Bem-vindo a <span>Transgilas</span></h1>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
             <div>
-                <a href="#" class="botao">Nosso menu</a>
+                <a href="#" class="botaoCadastrar">Cadastrar-se</a>
                 <a href="#" class="botao">Nosso menu</a>
             </div>
-            <a href=""><img src="" alt=""></a>
+            <div class="div-formulario">
+                <form class="formulario">
+                    <div>
+                        <label for="nome">Nome do Cliente</label>
+                        <input type="text" name="nome" id="nome">
+                    </div>
+                    <div>
+                        <label for="nome">E-mail</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div>
+                        <label for="palavra-passe">Palavra-passe</label>
+                        <input type="password" name="palavra-passe" id="palavra-passe">
+                    </div>
+                </form>
+            </div>
         </section>
         <section class="nossoMenu" id="nossoMenu">
             <div class="secao-span">
@@ -268,6 +283,7 @@
             </a>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -90,7 +90,19 @@ body {
     border-bottom: 0;
     border-radius: 0px 30px 0px 30px;
 }
-
+.ativo{
+    color: var(--cor-principal);
+    transition: .5s ease-in-out;
+}
+.fixar{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: var(--cor-fundo);
+    padding: 1em 4em;
+    z-index: 100;
+}
 .header-container .menu {
     display: flex;
     gap: 30px;
@@ -202,6 +214,27 @@ section {
     border-radius: 20px;
     padding: 8px 20px;
     font-size: 1.2em;
+}
+.div-formulario{
+    padding: 1em;
+    border-radius: 8px;
+}
+.div-formulario form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+    border-radius: 8px;
+}
+.div-formulario>form>div{
+    border-radius: 5px;
+    background-color: transparent;
+}
+.div-formulario input{
+    padding: .5em;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 2px solid var(--cor-principal);
 }
 
 /*Secção de menu*/
