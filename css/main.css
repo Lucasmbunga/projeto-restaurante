@@ -161,6 +161,7 @@ body {
 /*Estilo main*/
 section {
     padding: 4em;
+    z-index: -2;
 }
 
 .main .home {
@@ -215,28 +216,81 @@ section {
     padding: 8px 20px;
     font-size: 1.2em;
 }
-.div-formulario{
-    padding: 1em;
-    border-radius: 8px;
+.botaoCadastrar{
+    background-color: var(--cor-principal);
+    font-weight: bold;
+    transition: .5s ease-in-out;
+}
+.botaoCadastrar:hover{
+    transform: scale(1.02);
+    background-color: #f9cc6d;
+}
+dialog.div-formulario{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 420px;
+    padding: 2em;
+    border-radius: 15px;
+    background-color: #fff;
+    color: #3f3f3f;
+    box-shadow:0 3px 10px rgba(0, 0, 0, 0.388) ;
+    animation: animarModal .4s linear ;
+    z-index: 100;
+}
+@keyframes animarModal{
+    0%{
+        top:90% ;
+    }
 }
 .div-formulario form{
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1em;
-    padding: 1em;
-    border-radius: 8px;
+}
+.div-formulario form h1{
+    margin: 0;
 }
 .div-formulario>form>div{
-    border-radius: 5px;
+    width: 100%;
     background-color: transparent;
 }
 .div-formulario input{
-    padding: .5em;
-    border-radius: 5px;
-    background-color: transparent;
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    background-color: rgba(236, 233, 233, 0.502);
+    margin-top: 1em;
+    padding: 1em;
     border: 2px solid var(--cor-principal);
 }
+.div-formulario button{
+    width: 50%;
+    display: block;
+    border-radius: 10px;
+    background-color: var(--cor-principal);
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: .8em;
+    padding: .8em 2em;
+    border: 2px solid var(--cor-principal);
+    cursor: pointer;
+}
 
+div.overlay{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.822);
+    z-index: 0;
+}
 /*Secção de menu*/
 .nossoMenu {
     background-color: var(--cor-fundo-secundario);
@@ -828,5 +882,8 @@ div.receba-notificacoes button {
     }
 }
 @media screen and (max-width:600px) {
+    .div-formulario{
+    width: 80%;
+}
 
 }

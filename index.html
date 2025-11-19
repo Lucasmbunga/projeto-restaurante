@@ -30,7 +30,7 @@
                 <div class="menu">
                     <nav class="navmenu">
                         <ul>
-                            <li><a href="#" class="ativo">Home</a></li>
+                            <li><a href="#home" class="ativo">Home</a></li>
                             <li><a href="#sobre">Sobre</a></li>
                             <li><a href="#nossoMenu">Menu</a></li>
                             <li><a href="#especiais">Especiais</a></li>
@@ -44,6 +44,7 @@
         </div>
     </header>
     <main class="main">
+        
         <section class="home" id="home">
             <h1>Bem-vindo a <span>Transgilas</span></h1>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
@@ -51,22 +52,26 @@
                 <a href="#" class="botaoCadastrar">Cadastrar-se</a>
                 <a href="#" class="botao">Nosso menu</a>
             </div>
-            <div class="div-formulario">
-                <form class="formulario">
+            <dialog class="div-formulario">
+                <form class="formulario" autocomplete="on">
+                    <h>Cadastre-se</h>
                     <div>
-                        <label for="nome">Nome do Cliente</label>
-                        <input type="text" name="nome" id="nome">
+                        <label for="nomeCliente">Nome do Cliente</label>
+                        <input type="text" name="nomeCliente" id="nomeCliente" placeholder="Nome do usuario" required autofocus autocomplete="name">
                     </div>
                     <div>
-                        <label for="nome">E-mail</label>
-                        <input type="email" name="email" id="email">
+                        <label for="emailCliente">E-mail</label>
+                        <input type="email" name="emailCliente" id="emailCliente" placeholder="E-mail" required autocomplete="email">
                     </div>
                     <div>
-                        <label for="palavra-passe">Palavra-passe</label>
-                        <input type="password" name="palavra-passe" id="palavra-passe">
+                        <label for="palavra-passecliente">Palavra-passe</label>
+                        <input type="password" name="palavra-passecliente" id="palavra-passecliente" placeholder="Palavra-passe"
+                        required autocomplete="current-password">
                     </div>
+                    <button>Cadastrar</button>
                 </form>
-            </div>
+            </dialog>
+            <div class="overlay"></div>
         </section>
         <section class="nossoMenu" id="nossoMenu">
             <div class="secao-span">
@@ -266,7 +271,7 @@
                 </p>
                 <form action="">
                     <div>
-                        <input type="email" name="email" id="email">
+                        <input type="email" name="emailSubscricao" id="emailSubscricao">
                         <button>Subscrever</button>
                     </div>
                 </form>
