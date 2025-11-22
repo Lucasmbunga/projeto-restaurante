@@ -4,8 +4,31 @@ const navLinks = document.querySelectorAll("nav a")
 const sections = document.querySelectorAll
     ("section")
 const botaoCadastrar = document.querySelector(".botaoCadastrar")
+const botaoSubmeter = document.querySelector(".formulario button")
 const overlay = document.querySelector(".overlay")
+const voltar_inicio=document.querySelector(".voltar-inicio")
 
+botaoSubmeter.addEventListener("click", () => {
+    const camposDeDados = document.querySelectorAll(".formulario input")
+
+    camposDeDados.forEach(campo => {
+
+        campo.addEventListener("blur", (event) => {
+
+            let estadoDeCampo = event.target.validity
+            console.log(estadoDeCampo)
+            if (estadoDeCampo.valueMissing) {
+                campo.setCustomValidity("Este campo nao pode ficar vazio")
+            }
+            else {
+            }
+
+            campo.reportValidity()
+        })
+
+    })
+
+})
 
 botaoCadastrar.addEventListener("click", () => {
     document.querySelector("dialog").show()
@@ -35,6 +58,13 @@ const controlarSecoes = () => {
         const alturaSection = section.offsetHeight
         const id = section.getAttribute("id")
         if (posicaoRolagem >= topSection && posicaoRolagem < topSection + alturaSection) {
+            let idSection=section.getAttribute("id")
+            if(idSection!="home"){
+                voltar_inicio.style.display="block"
+            }
+            else{
+                voltar_inicio.style.display="none"
+            }
 
             navLinks.forEach(link => {
                 link.classList.remove("ativo")
