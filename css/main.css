@@ -426,10 +426,10 @@ div.imagem-prato {
     width: 200px;
     height: 200px;
     filter: blur(1px);
-    background-image: linear-gradient(to left,#2e240c88,#2e240c6f,transparent);
+    background-image: linear-gradient(to left, #2e240c88, #2e240c6f, transparent);
     border-radius: 20px;
     transform: rotate(-215deg);
-    transform-origin: 85% ;
+    transform-origin: 85%;
     animation: gradientetes 1s ease-in-out infinite;
     z-index: -1;
 }
@@ -978,7 +978,7 @@ div.receba-notificacoes button {
     }
 
     .home div>a {
-        padding: .8em 1.8em;
+        padding: .8em 1.5em;
         font-size: 1.2em;
         border-radius: 25px;
         margin: auto;
@@ -997,5 +997,39 @@ div.receba-notificacoes button {
         padding: 1.5em 1em;
     }
 
+    .contatos .container-formulario {
+
+        width: 80%;
+        margin: auto;
+    }
+
+    .contatos form {
+        grid-template: 1fr  20px 1fr 20px 2fr/ 1fr;
+    }
+
+    .contatos form div:nth-child(1) {
+        grid-area: 1/1/2/-1;
+        grid-template: 1fr 20px 1fr / 1fr;
+    }
+
+    .contatos form div:nth-child(1) #nome {
+        grid-area: 1/1/2/-1;
+    }
+
+
+    .contatos form div:nth-child(1) #email {
+        grid-area: 3/1/-1/-1;
+
+    }
+
+    .contatos form div:nth-child(2) {
+        grid-area: 3/1/4/-1;
+
+    }
+
+    .contatos form div:nth-child(3) {
+        grid-area: -2/1/-1/-1;
+
+    }
 
 }
