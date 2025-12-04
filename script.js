@@ -6,7 +6,17 @@ const sections = document.querySelectorAll
 const botaoCadastrar = document.querySelector(".botaoCadastrar")
 const botaoSubmeter = document.querySelector(".formulario button")
 const overlay = document.querySelector(".overlay")
-const voltar_inicio=document.querySelector(".voltar-inicio")
+const voltar_inicio = document.querySelector(".voltar-inicio")
+
+const menuMobile = document.querySelector("#menu-mobile")
+
+menuMobile.addEventListener("click", () => {
+    const menuDesktop = document.querySelector(".menu ")
+    menuDesktop.classList.add("menu-aberto")
+    menuDesktop.addEventListener("click", (event) => {
+        menuDesktop.classList.remove("menu-aberto")
+    })
+})
 
 botaoSubmeter.addEventListener("click", () => {
     const camposDeDados = document.querySelectorAll(".formulario input")
@@ -35,6 +45,9 @@ botaoCadastrar.addEventListener("click", () => {
     overlay.style.display = "block"
 })
 
+
+
+window.scrollY > 50 ? menuFixo.classList.add("fixar") : menuFixo.classList.remove("fixar")
 window.onscroll = function () {
     window.scrollY > 50 ? menuFixo.classList.add("fixar") : menuFixo.classList.remove("fixar")
     controlarSecoes()
@@ -58,12 +71,12 @@ const controlarSecoes = () => {
         const alturaSection = section.offsetHeight
         const id = section.getAttribute("id")
         if (posicaoRolagem >= topSection && posicaoRolagem < topSection + alturaSection) {
-            let idSection=section.getAttribute("id")
-            if(idSection!="home"){
-                voltar_inicio.style.display="block"
+            let idSection = section.getAttribute("id")
+            if (idSection != "home") {
+                voltar_inicio.style.display = "block"
             }
-            else{
-                voltar_inicio.style.display="none"
+            else {
+                voltar_inicio.style.display = "none"
             }
 
             navLinks.forEach(link => {

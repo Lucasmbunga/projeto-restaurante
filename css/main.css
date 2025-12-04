@@ -3,7 +3,7 @@
 :root {
     --cor-fundo: #101013;
     --cor-fundo-secundario: #1b1811;
-    --cor-principal: #dcb560;
+    --cor-principal: rgb(220, 181, 96);
     --complementar: #2e240c;
 }
 
@@ -15,6 +15,17 @@
     border: none;
     outline: none;
     list-style-type: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 1280px;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-fundo);
 }
 
 .h2-secao {
@@ -34,14 +45,8 @@ a {
     color: inherit;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    width: 100%;
-    height: 100%;
-    font-family: Arial, Helvetica, sans-serif;
+.header {
+    background-color: var(--cor-fundo);
 }
 
 .header .header-container {
@@ -97,10 +102,10 @@ body {
 }
 
 .fixar {
-    width: 100%;
     position: fixed;
     left: 0;
     top: 0;
+    width: 100%;
     background-color: var(--cor-fundo);
     padding: 1em 4em;
     z-index: 100;
@@ -109,6 +114,10 @@ body {
 .header-container .menu {
     display: flex;
     gap: 30px;
+}
+
+#menu-mobile {
+    display: none;
 }
 
 .header-container .menu ul {
@@ -162,9 +171,23 @@ body {
 }
 
 /*Estilo main*/
+main {
+    min-width: 100%;
+}
+
 section {
     padding: 4em;
     z-index: -2;
+}
+
+div.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.925);
+    z-index: 100;
 }
 
 .main .home {
@@ -261,6 +284,9 @@ dialog.div-formulario {
 }
 
 .div-formulario form h1 {
+    color: var(--cor-principal);
+    font-size: 2em;
+    font-weight: bold;
     margin: 0;
 }
 
@@ -339,7 +365,8 @@ div.overlay {
 
 section.nossoMenu .container-menu>div {
     position: relative;
-    flex: 0.1 1 250px;
+    flex: 0.01 1 250px;
+
     height: 400px;
     display: flex;
     flex-direction: column;
@@ -429,7 +456,7 @@ div.imagem-prato {
     background-image: linear-gradient(to left, #2e240c88, #2e240c6f, transparent);
     border-radius: 20px;
     transform: rotate(-215deg);
-    transform-origin: 85%;
+    transform-origin: 90%;
     animation: gradientetes 1s ease-in-out infinite;
     z-index: -1;
 }
@@ -583,6 +610,11 @@ div.imagem-prato {
 
     width: 60%;
     margin: auto;
+    border: 1.5px solid #6d541d;
+    background-color: #302b218a;
+    padding: 3em 2em;
+    padding-bottom: 1em;
+    border-radius: 10px;
 }
 
 .contatos form {
@@ -599,9 +631,11 @@ div.imagem-prato {
 .contatos form div:nth-child(1) #email,
 .contatos form div:nth-child(1) #nome,
 .contatos form #assunto {
-    border: 1px solid var(--cor-principal);
+    border: 1px solid #6d541d;
     padding: 10px;
     background-color: transparent;
+    color: #a3a2a2;
+    border-radius: .5em;
 
 }
 
@@ -609,7 +643,6 @@ div.imagem-prato {
 .contatos form div:nth-child(1) #nome:focus,
 .contatos form #assunto:focus {
 
-    background-color: var(--cor-fundo);
     animation: mudarFundo 2s linear forwards;
 }
 
@@ -621,13 +654,9 @@ div.imagem-prato {
 
 .contatos form div:nth-child(1) #nome {
     grid-area: 1/1/2/2;
-    border-radius: .3em;
 }
 
-.contatos form div input::placeholder {
-    color: #646363;
-}
-
+.contatos form div input::placeholder,
 .contatos form div textarea::placeholder {
     color: #646363;
 }
@@ -641,7 +670,7 @@ div.imagem-prato {
 
 .contatos form #assunto {
     width: 100%;
-    border-radius: .3em;
+    padding: 15px 10px;
 }
 
 .contatos form div:nth-child(1) #email {
@@ -652,11 +681,13 @@ div.imagem-prato {
 .contatos form div:nth-child(2) {
     grid-area: 3/1/4/-1;
 
+
 }
 
 .contatos form div:nth-child(3) {
     grid-area: -2/1/-1/-1;
-    border: 1px solid var(--cor-principal);
+    border: 1px solid #6d541d;
+    border-radius: .5em;
 
 }
 
@@ -712,11 +743,11 @@ div.redes-sociais {
     width: 30%;
 }
 
-.redes-sociais a {
-    width: 40px;
-    height: 40px;
+.redes-sociais a i {
+    display: inline-block;
     border-radius: 50%;
-    background-color: gray;
+    font-size: 2.5em;
+    color: var(--cor-principal);
 
 }
 
@@ -799,10 +830,70 @@ div.receba-notificacoes button {
 
 
 @media screen and (max-width:983px) {
-    .header-container .menu {
-        display: none;
+
+    #menu-mobile {
+        position: absolute;
+        right: 40px;
+        display: block;
+
     }
 
+    
+    .header-container .menu {
+        display: none;
+        gap: 30px;
+    }
+    .header-container .menu-aberto {
+        display: flex !important;
+        transition: .5s;
+    }
+
+    #menu-mobile i {
+        display: block;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        font-size: 1.5em;
+        color: var(--cor-principal);
+    }
+
+    .navmenu a:hover {
+        color: white;
+    }
+
+
+    .ativo {
+        display: inline-flex;
+        text-align: center;
+        width: 100%;
+        background-color: white;
+        padding: 0 1em;
+        border-radius: 5px;
+    }
+
+    .header-container .menu ul {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 150px;
+        display: block;
+        text-align: center;
+        padding: 1em;
+        padding-bottom: 2em;
+        background-color: #e6b64ff1;
+        animation: mostrarMenu .2s linear;
+        z-index: 100;
+    }
+
+    @keyframes mostrarMenu {
+        0% {
+            width: 0;
+        }
+
+    }
+
+
+    /*SEÇÃO DE MENU*/
     .nossoMenu .container-menu {
         align-items: center;
         align-content: center;
@@ -885,14 +976,17 @@ div.receba-notificacoes button {
     .contatos div.endereco-horario {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: flex-start;
         gap: .5em;
         color: #898888;
         margin: 1em 0;
     }
 
+    div.endereco-horario {
+        justify-content: flex-start;
+    }
+
     .endereco-horario>div {
-        width: 100%;
         margin: .8em 0;
     }
 
@@ -940,13 +1034,53 @@ div.receba-notificacoes button {
 
 }
 
-@media screen and (max-width:712px) {
+@media screen and (max-width:715px) {
     div.links-usuais {
         padding-left: 4em;
+    }
+
+    .contatos div.container-formulario {
+        max-width: 500px;
+        margin: auto;
+        padding-bottom: .2em;
+    }
+
+
+    .contatos form {
+        grid-template: 1fr 2em .5fr 2em 2fr/ 1fr;
+    }
+
+    .contatos form div:nth-child(1) {
+        grid-area: 1/1/2/-1;
+        grid-template: 1fr 20px 1fr / 1fr;
+    }
+
+    .contatos form div:nth-child(1) input#nome {
+        grid-area: 1/1/2/-1;
+    }
+
+
+    .contatos form div:nth-child(1) input#email {
+        grid-area: 3/1/-1/-1;
+
+    }
+
+    .contatos form div:nth-child(2) {
+        grid-area: 3/1/4/-1;
+
+    }
+
+    .contatos form div:nth-child(3) {
+        grid-area: -2/1/-1/-1;
+
     }
 }
 
 @media screen and (max-width:600px) {
+    .logo h1 {
+        font-size: 1.5em;
+    }
+
     section {
         padding: 1.9em;
     }
@@ -978,15 +1112,17 @@ div.receba-notificacoes button {
     }
 
     .home div>a {
-        padding: .8em 1.5em;
+        padding: .6em 1.5em;
         font-size: 1.2em;
         border-radius: 25px;
         margin: auto;
     }
 
-    .div-formulario {
-        width: 80%;
-    }
+.opcoes-menu a {
+    font-size: 1.01em;
+    transition: .5s ease-in-out;
+
+}
 
     section.nossoMenu .container-menu {
         gap: 40px 20px;
@@ -997,38 +1133,50 @@ div.receba-notificacoes button {
         padding: 1.5em 1em;
     }
 
-    .contatos .container-formulario {
+    section.nossoMenu .container-menu>div {
+        position: relative;
+        flex: none;
 
-        width: 80%;
+    }
+
+    .fotos-galeria {
+        gap: 20px;
+    }
+
+    .fotos-galeria>div {
+        flex: .8 1 250px;
         margin: auto;
+        border: 3px solid #2e240c;
+        box-shadow: -5px 5px #2e240c;
+
     }
 
+    footer {
+        padding: 2em;
+    }
+
+}
+
+@media screen and (max-width:500px) {
+    .contatos-header {
+        display: none;
+    }
+
+    .home div a {
+        font-size: .9em;
+    }
+
+    
     .contatos form {
-        grid-template: 1fr  20px 1fr 20px 2fr/ 1fr;
+        grid-template: 1fr 2em .4fr 2em 1.5fr/ 1fr;
     }
 
-    .contatos form div:nth-child(1) {
-        grid-area: 1/1/2/-1;
-        grid-template: 1fr 20px 1fr / 1fr;
-    }
+}
 
-    .contatos form div:nth-child(1) #nome {
-        grid-area: 1/1/2/-1;
-    }
+@media screen and (max-width:320px) {
 
-
-    .contatos form div:nth-child(1) #email {
-        grid-area: 3/1/-1/-1;
-
-    }
-
-    .contatos form div:nth-child(2) {
-        grid-area: 3/1/4/-1;
-
-    }
-
-    .contatos form div:nth-child(3) {
-        grid-area: -2/1/-1/-1;
+    .contatos div.container-formulario {
+        width: 100%;
 
     }
 
