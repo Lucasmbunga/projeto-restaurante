@@ -180,16 +180,6 @@ section {
     z-index: -2;
 }
 
-div.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.925);
-    z-index: 100;
-}
-
 .main .home {
     position: relative;
     background-image: url("../img/fundo2.jpg");
@@ -817,6 +807,7 @@ div.receba-notificacoes button {
 }
 
 .voltar-inicio {
+    display: none;
     position: fixed;
     bottom: 10px;
     right: 10px;
@@ -838,11 +829,12 @@ div.receba-notificacoes button {
 
     }
 
-    
+
     .header-container .menu {
         display: none;
         gap: 30px;
     }
+
     .header-container .menu-aberto {
         display: flex !important;
         transition: .5s;
@@ -891,6 +883,18 @@ div.receba-notificacoes button {
         }
 
     }
+
+    .menu a.botao {
+        width: 100%;
+        background-color: transparent;
+        border: 1.5px solid #fff;
+        margin-top: .5em;
+    }
+
+    .botao:hover {
+        background-color: var(--cor-principal);
+    }
+
 
 
     /*SEÇÃO DE MENU*/
@@ -1118,11 +1122,11 @@ div.receba-notificacoes button {
         margin: auto;
     }
 
-.opcoes-menu a {
-    font-size: 1.01em;
-    transition: .5s ease-in-out;
+    .opcoes-menu a {
+        font-size: 1.01em;
+        transition: .5s ease-in-out;
 
-}
+    }
 
     section.nossoMenu .container-menu {
         gap: 40px 20px;
@@ -1166,7 +1170,7 @@ div.receba-notificacoes button {
         font-size: .9em;
     }
 
-    
+
     .contatos form {
         grid-template: 1fr 2em .4fr 2em 1.5fr/ 1fr;
     }
