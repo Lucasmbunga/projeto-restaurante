@@ -165,7 +165,15 @@ a {
     transition: .5s ease-in-out;
     cursor: pointer;
 }
-
+.menu .navmenu .botao{
+    padding: .5em 2em;
+}
+.menu .navmenu .botao:hover{
+    color: white;
+}
+.menu .navmenu .botao:hover::before{
+    width: 0;
+}
 .botao:hover {
     background-color: var(--cor-principal);
 }
